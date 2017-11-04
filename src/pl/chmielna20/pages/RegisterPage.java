@@ -49,6 +49,8 @@ public class RegisterPage extends BasePage{
 		if(driver.findElement(By.id("sc_behind")).isDisplayed()){
 			driver.findElement(By.id("sc_close")).click();
 		}
+		
+		//test
 		driver.findElement(genderbutton).click();
 	}
 	public void chooseDayOfBirth()
