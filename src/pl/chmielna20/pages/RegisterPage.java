@@ -1,5 +1,6 @@
 package pl.chmielna20.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -23,8 +24,7 @@ public class RegisterPage extends BasePage{
 	By password = By.id("password");
 	By passconfirmation = By.id("password_confirmation");
 	By regulationsconfirm = By.xpath("//input[@value='1']");
-	By continuebutton = By.partialLinkText("Kontynuuj");
-	
+	By continuebutton = By.name(name)
 	String firstName = "Rafa³";
 	
 	public RegisterPage(WebDriver driver) {
@@ -49,10 +49,12 @@ public class RegisterPage extends BasePage{
 		if(driver.findElement(By.id("sc_behind")).isDisplayed()){
 			driver.findElement(By.id("sc_close")).click();
 		}
+	}
 		
 		//test
-		driver.findElement(genderbutton).click();
-	}
+		{driver.findElement(genderbutton).click();
+		}
+		
 	public void chooseDayOfBirth()
 	{
 		Select selectDay = new Select(driver.findElement(By.id("day")));
@@ -61,16 +63,16 @@ public class RegisterPage extends BasePage{
 	public void chooseMonthOfBirth()
 	{
 		Select selectMonth = new Select(driver.findElement(By.id("month")));
-		selectMonth.deselectByVisibleText("7");
+		selectMonth.selectByVisibleText("7");
 	}
 	public void chooseYearOfBirth()
 	{
 		Select selectYear = new Select(driver.findElement(By.id("year")));
-		selectYear.deselectByVisibleText("1986");
+		selectYear.selectByVisibleText("1986");
 	}
 	public void typePhoneNumber()
 	{
-		driver.findElement(phonenumber).sendKeys("+48500300300");
+		driver.findElement(phonenumber).sendKeys("500300300");
 	}
 	public void typeEmail()
 	{

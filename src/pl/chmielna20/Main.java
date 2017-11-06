@@ -1,7 +1,6 @@
 package pl.chmielna20;
 
 import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,12 +20,7 @@ public class Main {
 	
 	public static final String BASIC_URL = "https://chmielna20.pl";
 	
-	@BeforeClass
-	public static void init(){
-		System.setProperty("webdriver.chrome.driver", "C:\\workspace\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-	}
+		
 	
 	/*@AfterClass
 	public static void finish(){
