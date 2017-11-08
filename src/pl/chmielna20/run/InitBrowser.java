@@ -10,7 +10,7 @@ public class InitBrowser{
 	
 	@Given("Open the Browser")
 	public void openTheBrowser(){
-		if(Main.driver != null){
+		if(Main.driver == null){
 			System.setProperty("webdriver.chrome.driver", "C:\\workspace\\chromedriver.exe");
 			Main.driver = new ChromeDriver();
 			Main.driver.manage().window().maximize();

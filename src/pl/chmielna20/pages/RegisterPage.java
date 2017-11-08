@@ -15,7 +15,7 @@ public class RegisterPage extends BasePage{
 	
 	By userFirstName=By.id("firstname");
 	By userSecondName=By.id("lastname");
-	By genderButton=By.xpath("//*[@id='genderM']");
+	By genderButton=By.id("genderM");
 	By dayOfBirth = By.name("day");
 	By monthOfBirth = By.name("month");
 	By yearOfBirth = By.name("year");
@@ -47,7 +47,7 @@ public class RegisterPage extends BasePage{
 	}
 	public void chooseGender()
 	{
-		if(driver.findElement(By.id("sc_behind")).isDisplayed()){
+		if(driver.findElement(By.id("sc_wrapper")).isDisplayed()){
 			driver.findElement(By.id("sc_close")).click();
 		}
 	}

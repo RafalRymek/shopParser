@@ -1,24 +1,23 @@
 package pl.chmielna20.run;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import cucumber.api.java8.En;
 import pl.chmielna20.Main;
 import pl.chmielna20.pages.RegisterPage;
 
-public class RegisterStep implements En
+public class RegisterStep 
 {
 	RegisterPage register;
 	public RegisterStep(){
-		Then("Navigate to register page",()->{
+		Then("Navigate to register page",();
+				{
 			if(Main.driver == null){
 				Main.driver = new ChromeDriver();
 			}
 			register = new RegisterPage(Main.driver);
 			register.goToPage();
-		});
+		};
 		
-		And("Fill data",()->{
+		And ("Fill data",(){
 			if(register != null){
 				
 			register.typeUserFirstName();
@@ -34,6 +33,14 @@ public class RegisterStep implements En
 			register.clickOnContinueRegulationsCheckbox();
 			register.clickOnContinueButton();
 			}
-			});
+			};
+	}
+	private void And ("Fill data",(){() {
+		// TODO Auto-generated method stub
+		
+	}
+	private void Then() {
+		// TODO Auto-generated method stub
+		
 	}		
 }
