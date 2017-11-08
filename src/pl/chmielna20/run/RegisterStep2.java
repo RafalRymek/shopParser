@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pl.chmielna20.Main;
 import pl.chmielna20.pages.RegisterPage;
 
-public class RegisterStep 
+public class RegisterStep2 
 {
 			RegisterPage register = new RegisterPage(Main.driver);
 }

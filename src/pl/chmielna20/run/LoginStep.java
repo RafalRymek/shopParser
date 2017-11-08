@@ -10,17 +10,22 @@ public class LoginStep {
 	
 	private static final WebDriver Webdriver = null;
 	LoginPage login;
-	public LoginStep(){
+	public LoginStep();
+		
+	
 		{
+			
 			if(Main.driver == null){
 				Main.driver = new ChromeDriver();
 			}
-			login = new LoginPage(Webdriver);
-			login.goToPage();
+			login = new LoginPage(Main.driver);
+			
+	
+
 		};
 
 		{
-			if(login == null){
+			if(login != null){
 				
 			login.typeEmail();
 			login.typeEmailPass();

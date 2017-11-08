@@ -7,20 +7,19 @@ import pl.chmielna20.Main;
 
 public class LoginPage extends BasePage{
 
-	public LoginPage(String URL, WebDriver driver) {
+	public LoginPage(WebDriver driver) {
 		super(URL, driver);
 	}
-	private final static String URL = "/#";
+	private final static String URL = "/login";
 	   WebDriver driver;
 	
 		By emailLogin = By.id("email");
 		By emailPassword = By.id("password");
 		By loginButton = By.cssSelector("input[value='Zaloguj siê']");
 		
-				public void goToPage(){
+		{
 			driver.get(Main.BASIC_URL+URL);
 		}
-		
 		public void typeEmail()
 		{
 			driver.findElement(emailLogin).sendKeys("rafal@gmail.com");
