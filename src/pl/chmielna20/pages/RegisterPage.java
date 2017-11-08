@@ -96,8 +96,4 @@ public class RegisterPage extends BasePage{
 		driver.findElement(continueButton).click();
 	}
 
-	public static void closePopup() {
-		// TODO Auto-generated method stub
-		
-	}	
 }

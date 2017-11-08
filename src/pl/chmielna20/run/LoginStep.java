@@ -11,8 +11,18 @@ public class LoginStep {
 	private static final WebDriver Webdriver = null;
 	LoginPage login;
 	public LoginStep();
-		
-	
+	@Then("Click the login button")
+	public void clickButton(){
+	login.clickButton(); 
+	}
+	@And("Fill the form")
+	public void fillTheForm(){
+	login.sendKeys //mail, haslo
+	}
+	@Then("Click login")
+	public void clickLoginButton(){
+	login.login(); //metoda klikajaca w buttona logowania
+	}
 		{
 			
 			if(Main.driver == null){
