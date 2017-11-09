@@ -1,28 +1,25 @@
 package pl.chmielna20.run;
 
-import org.openqa.selenium.WebDriver;
+import cucumber.api.java8.En;
+import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import cucumber.api.java.en.Given;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pl.chmielna20.Main;
 
-public class InitBrowser{
-	
-	@Given("Open the Browser")
-	public void openTheBrowser(){
-		if(Main.driver == null){
-			System.setProperty("webdriver.chrome.driver", "C:\\workspace\\chromedriver.exe");
-			Main.driver = new ChromeDriver();
-			Main.driver.manage().window().maximize();
-		}
-	}
-	/*public InitBrowser(){
-	Given("Open the Browser",()->{
-			if(Main.driver != null){
-				System.setProperty("webdriver.chrome.driver", "C:\\workspace\\chromedriver.exe");
-				Main.driver = new ChromeDriver();
-				Main.driver.manage().window().maximize();
-			}
-		});
-	}	*/
+public class InitBrowser implements En {
+
+    public InitBrowser() {
+        Given("Open the Browser", () -> {
+            if (Main.driver == null) {
+                System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+                Main.driver = new ChromeDriver();
+                Main.driver.manage().window().maximize();
+            }
+            if(Main.wait == null){
+                Main.wait = new WebDriverWait(Main.driver,30);
+            }
+            Assert.assertTrue(Main.driver != null);
+            Assert.assertTrue(Main.wait != null);
+        });
+    }
 }
