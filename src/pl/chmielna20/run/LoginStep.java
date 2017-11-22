@@ -1,49 +1,27 @@
 package pl.chmielna20.run;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import cucumber.api.java8.En;
 import pl.chmielna20.Main;
 import pl.chmielna20.pages.LoginPage;
 
+public class LoginStep implements En {
 
-public class LoginStep {
-	
-	private static final WebDriver Webdriver = null;
 	LoginPage login;
-	public LoginStep();
-	@Then("Click the login button")
-	public void clickButton(){
-	login.clickButton(); 
-	}
-	@And("Fill the form")
-	public void fillTheForm(){
-	login.sendKeys //mail, haslo
-	}
-	@Then("Click login")
-	public void clickLoginButton(){
-	login.login(); //metoda klikajaca w buttona logowania
-	}
-		{
-			
-			if(Main.driver == null){
-				Main.driver = new ChromeDriver();
-			}
+
+	public LoginStep() {
+		Then("Navigate to login page", () -> {
 			login = new LoginPage(Main.driver);
-			
-	
-
-		};
-
-		{
-			if(login != null){
-				
-			login.typeEmail();
-			login.typeEmailPass();
-			login.clickOnLoginButton();
-		
+			login.goToPage();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			};
-	}		
 			
+			login.typeEmail();
+			login.typePassword();
+		});
 	}
 
+}

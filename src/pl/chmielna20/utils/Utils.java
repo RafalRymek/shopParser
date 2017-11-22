@@ -17,7 +17,7 @@ public class Utils {
     }
 
     public static void typeToFiled(WebElement webElement, CharSequence charSequence){
-        Assert.assertTrue(webElement.isDisplayed());
+//        Assert.assertTrue(webElement.isDisplayed());
         webElement.sendKeys(charSequence);
     }
 

@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 public abstract class BasePage {
 
     private String URL;
-    private WebDriver webDriver;
+    protected WebDriver driver;
 
     public BasePage(String URL, WebDriver driver) {
         this.URL = URL;
-        this.webDriver = driver;
+        this.driver = driver;
     }
 
     public String getURL() {
@@ -20,11 +20,4 @@ public abstract class BasePage {
         URL = uRL;
     }
 
-    public WebDriver getWebDriver() {
-        return webDriver;
-    }
-
-    public void setWebDriver(WebDriver webDriver) {
-        this.webDriver = webDriver;
-    }
 }

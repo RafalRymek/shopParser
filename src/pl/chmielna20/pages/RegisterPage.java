@@ -11,7 +11,6 @@ import pl.chmielna20.utils.Utils;
 public class RegisterPage extends BasePage {
 
     private final static String URL = "/register";
-    private final WebDriver driver;
     private final WebDriverWait wait;
 
     private final By userFirstNameBy = By.id("firstname");
@@ -37,7 +36,6 @@ public class RegisterPage extends BasePage {
 
     public RegisterPage(WebDriver driver,WebDriverWait wait) {
         super(URL, driver);
-        this.driver = driver;
         this.wait = wait;
     }
 
